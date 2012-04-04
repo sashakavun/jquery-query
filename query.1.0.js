@@ -10,6 +10,11 @@
 ;"use strict";
 
 (function(window, jQuery){
+	/**
+	 * @param [name] Param name
+	 *
+	 * @return {Object/String} Whole query string as object or string value if name passed
+	 */
 	jQuery.query = function (name)
 	{
 		// Query string is not yet parsed?
