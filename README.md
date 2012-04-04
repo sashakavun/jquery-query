@@ -3,5 +3,7 @@ $.query
 Query string reader plugin for jQuery
 
 Usage:
-    var query = $.query(),
-        param = $.query('param');
+```js
+var query = $.query(),
+    param = $.query('param');
+```
