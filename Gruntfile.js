@@ -2,17 +2,20 @@
 module.exports = function (grunt) {
     "use strict";
 
+    // Fix CRLF issue on Windows systems
+    grunt.util.linefeed = "\n";
+
     grunt.initConfig({
         pkg: grunt.file.readJSON("package.json"),
 
         uglify: {
             options: {
                 preserveComments: false,
-                banner: "/* <%= pkg.name %> v<%= pkg.version %> (<%= pkg.repository.url %>) */\n"
+                banner: "/* <%= pkg.name %> <%= pkg.version %> (<%= pkg.repository.url %>) */\n"
             },
-            query: {
+            default: {
                 files: {
-                    "query-<%= pkg.version %>.min.js" : [ "query-<%= pkg.version %>.js" ]
+                    "<%= pkg.name %>.min.js" : [ "<%= pkg.name %>.js" ]
                 }
             }
         }
